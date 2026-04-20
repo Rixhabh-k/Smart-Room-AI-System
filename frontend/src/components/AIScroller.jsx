@@ -8,7 +8,7 @@ const AIScroller = () => {
   useEffect(() => {
     const fetchAdvice = async () => {
       try {
-       const res = await fetch("http://192.168.137.158:3000/api/latest-advice");
+       const res = await fetch("http://localhost:3000/api/latest-advice");
         const data = await res.json();
         if (data.advice) {
           setAdvice(`🤖 AI Advice: ${data.advice} |`);

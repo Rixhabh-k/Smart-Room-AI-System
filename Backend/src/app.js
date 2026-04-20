@@ -29,10 +29,17 @@ app.use("/api", aiRoutes);
 
 // Test Route
 
-app.get("/", (req, res) => {
 
-  res.send("Backend Working");
 
+
+app.use(express.static(
+  path.join(__dirname, "../frontend/dist")
+));
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../frontend/dist/index.html")
+  );
 });
 
 module.exports = app;

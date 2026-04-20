@@ -15,6 +15,11 @@ let latestAdvice = "Waiting for AI advice...";
 // Free fallback models
 
 const FREE_MODELS = [
+  "google/gemini-embedding-2-preview",
+  "anthropic/claude-opus-4.7",
+
+
+
   "meta-llama/llama-3.2-3b-instruct:free",
   "google/gemma-3-4b-it:free",
   "mistralai/mistral-7b-instruct:free",

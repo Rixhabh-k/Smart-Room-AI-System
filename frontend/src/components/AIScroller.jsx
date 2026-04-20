@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 const AIScroller = () => {
   const [advice, setAdvice] = useState(
@@ -8,7 +9,7 @@ const AIScroller = () => {
   useEffect(() => {
     const fetchAdvice = async () => {
       try {
-       const res = await fetch("http://localhost:3000/api/latest-advice");
+       const res = await fetch(`${API}/api/latest-advice`);
         const data = await res.json();
         if (data.advice) {
           setAdvice(`🤖 AI Advice: ${data.advice} |`);

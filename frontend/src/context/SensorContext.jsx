@@ -7,7 +7,10 @@ import React, {
 
 import axios from "axios";
 
+
 export const SensorContext = createContext();
+
+const API = import.meta.env.VITE_API_URL;
 
 export const SensorProvider = ({ children }) => {
 
@@ -28,7 +31,7 @@ export const SensorProvider = ({ children }) => {
   const fetchAIAdvice = async (temperature, humidity) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/ai-advice",
+        `${API}/api/ai-advice`,
         { temperature, humidity }
       );
       setAdvice(res.data.advice);
@@ -40,7 +43,7 @@ export const SensorProvider = ({ children }) => {
   // ✅ Sensor Fetch
   const fetchLatest = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/latest");
+      const res = await axios.get(`${API}/api/latest`);
       const data = res.data;
 
       setLatest(data);

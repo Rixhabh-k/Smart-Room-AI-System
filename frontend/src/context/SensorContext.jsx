@@ -48,6 +48,7 @@ export const SensorProvider = ({ children }) => {
     try {
       const res = await axios.get(`${API}/api/latest`);
       const data = res.data;
+      console.log("LATEST API RESPONSE:", res.data);
 
       setLatest(data);
 

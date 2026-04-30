@@ -11,21 +11,27 @@ router.post("/data", async (req, res) => {
 
   try {
 
-    const { temperature, humidity, limit }
-      = req.body;
+    const {
+      temperature,
+      humidity,
+      limit,
+      airQuality   // ✅ ADD THIS
+    } = req.body;
 
     console.log(
       "📡 ESP Data:",
       temperature,
       humidity,
-      limit
+      limit,
+      airQuality   // ✅ LOG THIS
     );
 
     const newData = new SensorData({
 
       temperature,
       humidity,
-      limit
+      limit,
+      airQuality   // ✅ SAVE THIS
 
     });
 

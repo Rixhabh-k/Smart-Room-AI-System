@@ -17,6 +17,11 @@ const sensorSchema = new mongoose.Schema({
     required: true
   },
 
+  airQuality: {        // ✅ ADD THIS
+    type: Number,
+    required: true
+  },
+
   aiMessage: {
     type: String,
     default: ""

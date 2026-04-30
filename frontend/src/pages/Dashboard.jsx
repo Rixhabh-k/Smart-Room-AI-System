@@ -8,6 +8,7 @@ import LimitCard from "../components/LimitCard";
 import AIScroller from "../components/AIScroller";
 
 import { Link } from "react-router-dom";
+import AQICard from "../components/AQICard";
 
 const Dashboard = () => {
   return (
@@ -31,6 +32,7 @@ const Dashboard = () => {
               <TempCard />
               <HumidityCard />
               <LimitCard />
+              <AQICard/>
             </div>
 
             <div className="lower">

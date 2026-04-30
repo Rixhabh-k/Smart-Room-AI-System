@@ -17,8 +17,11 @@ export const SensorProvider = ({ children }) => {
   const [latest, setLatest] = useState({
     temperature: "--",
     humidity: "--",
-    limit: "--"
+    limit: "--",
+    airQuality: "--"
   });
+
+  console.log(`T:${latest.temperature},H:${latest.humidity},AQI:${latest.airQuality},`)
 
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
